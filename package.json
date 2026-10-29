@@ -1,0 +1,38 @@
+{
+  "name": "docs-mcp-server",
+  "version": "1.0.0",
+  "description": "Model Context Protocol (MCP) server providing The Good Docs Project templates, authoring guides, and structured doc generation.",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "docs-mcp-server": "dist/index.js",
+    "docs-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "prepare": "npm run build",
+    "build": "tsc && shx mkdir -p dist/data && shx cp src/data/templates-bundle.json dist/data/ && chmod +x dist/index.js",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "test": "node --test"
+  },
+  "author": {
+    "name": "Yash Israni",
+    "url": "https://github.com/yashisrani"
+  },
+  "homepage": "https://github.com/yashisrani/Docs-MCP",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yashisrani/Docs-MCP.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "zod": "^4.6.6"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "shx": "^0.4.0",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
